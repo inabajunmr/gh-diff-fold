@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "gh-diff-fold",
+    "version": "0.0.0",
+    "description": "Chrome extension to fold all diff on GitHub.",
+    "permissions": ["https://github.com/*"],
+    "icons": {
+      "128": "icons/icon-128.png"
+    },
+    "background": {
+      "scripts": ["scripts/background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://github.com/*"],
+        "js": ["scripts/main.js"]
+      }
+    ],
+    "browser_action": {
+        "default_icon": {
+            "128": "icons/icon-128.png"
+        },
+        "default_title": "This app make all images into my face"
+      }
+  }
