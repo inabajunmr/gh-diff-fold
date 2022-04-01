@@ -1,15 +1,14 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "gh-diff-fold",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Chrome extension to fold all diff on GitHub.",
-    "permissions": ["https://github.com/*"],
+    "host_permissions": ["https://github.com/*"],
     "icons": {
       "128": "icons/icon-128.png"
     },
     "background": {
-      "scripts": ["scripts/background.js"],
-      "persistent": false
+      "service_worker": "scripts/background.js"
     },
     "content_scripts": [
       {
@@ -17,7 +16,7 @@
         "js": ["scripts/main.js"]
       }
     ],
-    "browser_action": {
+    "action": {
         "default_icon": {
             "128": "icons/icon-128.png"
         },
